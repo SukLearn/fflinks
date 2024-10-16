@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+.truth {
+  font-size: 3.25rem;
+  color: red;
+}
+.truth:hover span {
+  display: none;
+}
+.truth:hover::before {
+  content: "Best fflinks";
+  font-size: 3.25rem;
+  font-weight: bold;
+}
+.show {
+  font-size: 3.25rem;
+  font-weight: bold;
+}
+#author {
+  font-size: 1.5rem;
+  color: chocolate;
+  font-weight: 500;
+}
+#author:hover span {
+  display: none;
+}
+
+.content {
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: green;
+}
+.content:hover span {
+  display: none;
+}
+.content:hover::before {
+  content: "Original Creator Lasha Tarkhnishvili";
+}
+#text {
+  line-height: 60px;
+}

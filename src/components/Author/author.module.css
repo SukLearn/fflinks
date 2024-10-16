@@ -1,0 +1,13 @@
+.author {
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+}
+.name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  visibility: hidden;
+}
+.author:hover span {
+  visibility: visible;
+}

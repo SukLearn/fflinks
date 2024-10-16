@@ -1,0 +1,48 @@
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: cursive;
+  background-color: black;
+  color: white;
+  user-select: none;
+}
+.loading__container {
+  text-align: center;
+  position: relative;
+  width: calc(100vw - 30vw);
+}
+.counter,
+h1 {
+  font-size: 3rem;
+}
+.loading__bar__back,
+.loading__bar__front {
+  position: absolute;
+  height: 8px;
+  border-radius: 5px;
+  border: none;
+}
+.loading__bar__back {
+  background-color: lightgray;
+  width: 100%;
+}
+.loading__bar__front {
+  background-color: red;
+  color: red;
+}
+@media screen and (max-width: 750px) {
+  .loading__container {
+    width: 450px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .loading__container {
+    width: 250px;
+  }
+  .counter,
+  h1 {
+    font-size: 2em;
+  }
+}

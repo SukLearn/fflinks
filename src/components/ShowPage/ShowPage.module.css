@@ -1,0 +1,146 @@
+.container {
+  background-color: #4f4f4f;
+  color: white;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  font-family: cursive;
+}
+.copyToClipboard,
+.modalButton {
+  cursor: pointer;
+  transition: all 0.5s ease;
+  color: #fff;
+  border: 2px solid white;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+  font-weight: 500;
+  font-size: 15px;
+  background-color: transparent;
+  padding: 8px 10px;
+  border-radius: 25px;
+}
+.copyToClipboard:hover,
+.modalButton:hover {
+  color: #001f3f;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.modal__content {
+  padding: 5px 20px 5px 20px;
+  font-size: 3rem;
+  color: black;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 90vh;
+  word-wrap: break-word;
+}
+
+.title__truth {
+  color: white;
+  display: flex;
+  position: relative;
+  top: 4%;
+}
+.title__truth:hover span {
+  display: none;
+}
+.title__truth:hover:before {
+  content: "Best fflinks";
+  font-size: 3.25rem;
+  font-weight: bold;
+}
+.title__show {
+  font-size: 3.25rem;
+  font-weight: bold;
+}
+.table__container {
+  display: flex;
+  max-height: 600px;
+  overflow-y: auto;
+  border: solid 5px green;
+  position: relative;
+  background-color: rgb(41, 37, 37);
+  padding: 10px 0px;
+  top: 20%;
+  border-radius: 15px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th {
+  font-size: 1.5rem;
+  padding: 20px 15px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+}
+td {
+  text-align: center;
+  padding: 10px;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: #fff;
+  border-top: solid 1px rgba(255, 255, 255, 0.1);
+  border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar {
+  width: 1px;
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+@media only screen and (min-width: 1001px) {
+  .copyToClipboard,
+  .modalButton {
+    width: 100px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .table__container {
+    width: 100%;
+  }
+  .title__show {
+    font-size: 2em;
+  }
+  .title__truth:hover:before {
+    font-size: 2em;
+  }
+  th {
+    font-size: 1em;
+    padding: 20px 7px;
+  }
+  td {
+    font-size: 1em;
+  }
+}
+@media only screen and (max-width: 500px) {
+  th {
+    font-size: 0.8em;
+  }
+  td {
+    font-size: 0.6em;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .table__container {
+    height: 100vh;
+    width: 100%;
+  }
+  .copyToClipboard,
+  .modalButton {
+    color: #fff;
+    border: 2px solid white;
+    padding: 4px 15px;
+    border-radius: 5px;
+  }
+}

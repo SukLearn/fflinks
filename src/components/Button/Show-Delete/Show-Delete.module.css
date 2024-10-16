@@ -1,0 +1,29 @@
+.buttons button {
+  padding: 0.35rem 1.2rem;
+  cursor: pointer;
+  margin: 0.7rem;
+  text-align: center;
+  background-color: #853f3c;
+  border: solid 0.1rem #611515;
+  color: whitesmoke;
+}
+.buttons button:hover {
+  background-color: rgb(211, 211, 211);
+  color: black;
+}
+.disabledButton {
+  cursor: not-allowed;
+  color: red;
+}
+@media (max-width: 600px) {
+  .buttons button {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 601px) {
+  .buttons button {
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-radius: 5px;
+  }
+}
