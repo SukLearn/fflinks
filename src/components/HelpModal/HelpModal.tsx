@@ -4,7 +4,6 @@ import styles from "./HelpModal.module.css";
 
 export default function HelpModal() {
   const [help, setHelp] = useState(false);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [keySequence, setKeySequence] = useState<string[]>([]);
 
   const closeModal = () => {
@@ -26,7 +25,7 @@ export default function HelpModal() {
     setKeySequence((prevSequence) => {
       const newSequence = [...prevSequence, event.key.toLowerCase()].slice(-8);
       const sequenceString = newSequence.join("");
-
+      console.log(keySequence);
       // Mapping of key sequences to actions
       const actions: { [key: string]: () => void } = {
         fflinks: () => {
@@ -88,11 +87,12 @@ export default function HelpModal() {
             <span id={styles.author}>Luka Tarkhnishvili</span>
           </p>
           <br />
-          <p id={styles.text}>
+          <p className={styles.text}>
             Here are some helpful key sequences to get you started: <br />
             Currently, we have "h" for help, and key sequences for "fflinks",
             "suklearn", and "1996".
           </p>
+          <p className={styles.text}>YES I WANTED U GET BLIND</p>
         </div>
       </Modal>
     </>

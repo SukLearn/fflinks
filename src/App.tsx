@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import FFlinks from "./components/FFlinks/FFlinks";
 import ShowPage from "./components/ShowPage/ShowPage";
-import Lasha from "./components/1996/lasha";
+import Lasha from "./components/1996/Lasha";
 
 function App() {
   return (
