@@ -8,7 +8,7 @@ import HelpModal from "../HelpModal/HelpModal";
 
 interface DataItem {
   id: number;
-  input_value: string;
+  user_text: string;
 }
 
 export default function ShowPage() {
@@ -54,8 +54,9 @@ export default function ShowPage() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://suk-learn-api.vercel.app/api/fflinks/GET"
+          "https://suk-learn-api.vercel.app/api/GET"
         );
+        console.log("Fetched data response:", response.data); // Log the structure of the response
         if (response.data && Array.isArray(response.data.data)) {
           setData(response.data.data);
         } else {
@@ -72,8 +73,13 @@ export default function ShowPage() {
   }, []);
 
   const openModal = (index: number) => {
-    setIsOpen(true);
-    setSelectedIndex(index);
+    if (index >= 0 && index < data.length) {
+      // Ensure index is within bounds
+      setIsOpen(true);
+      setSelectedIndex(index);
+    } else {
+      console.warn("Invalid index for modal:", index);
+    }
   };
 
   const closeModal = () => {
@@ -106,11 +112,11 @@ export default function ShowPage() {
             {data.map((item, index) => (
               <tr key={item.id}>
                 <td>{index + 1}</td>
-                <td>{trimming(item.input_value)}</td>
+                <td>{trimming(item.user_text)}</td>
                 <td>
                   <button
                     className={styles.copyToClipboard}
-                    onClick={() => copyToClipBoard(item.input_value, index)}
+                    onClick={() => copyToClipBoard(item.user_text, index)}
                   >
                     {copiedIndex === index ? <span>&#9989;</span> : "Copy"}
                   </button>
@@ -128,7 +134,7 @@ export default function ShowPage() {
           </tbody>
         </table>
       </div>
-      {modalIsOpen && selectedIndex !== null && (
+      {modalIsOpen && selectedIndex !== null && selectedIndex < data.length && (
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
@@ -136,7 +142,7 @@ export default function ShowPage() {
           ariaHideApp={false}
         >
           <div className={styles.modal__content}>
-            {data[selectedIndex]?.input_value}
+            {data[selectedIndex]?.user_text || "No data available"}
           </div>
         </Modal>
       )}
