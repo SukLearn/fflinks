@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import FFlinks from "./components/FFlinks/FFlinks";
 import ShowPage from "./components/ShowPage/ShowPage";
 import Lasha from "./components/1996/Lasha";
-import Test from "./components/test/test";
 
 function App() {
   return (
@@ -13,8 +12,6 @@ function App() {
           <Route path="/" element={<FFlinks />} />
           <Route path="show" element={<ShowPage />} />
           <Route path="lashaUrod" element={<Lasha />} />
-          <Route path="test" element={<Test />} />
-
           <Route path="*" element={<FFlinks />} />
         </Routes>
       </Router>
