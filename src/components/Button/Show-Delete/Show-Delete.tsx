@@ -12,7 +12,7 @@ export default function ShowDelete() {
   const handleDelete = async () => {
     setLoading(true);
     try {
-      await axios.delete("https://suk-learn-api.vercel.app/api/fflinks/DELETE");
+      await axios.delete("https://suk-learn-api.vercel.app/api/DELETE");
     } catch (err) {
       console.error("Error occurred", err);
     } finally {

@@ -1,5 +1,5 @@
 import styles from "./FFlinks.module.css";
-import DOMPurify from "dompurify"; // DOMPurify for sanitizing input to prevent XSS attacks
+import DOMPurify from "dompurify";
 import { useState, FormEvent, useEffect } from "react";
 import axios from "axios";
 import Footer from "../Footer/footer";
@@ -15,9 +15,9 @@ export default function FFlinks() {
   const [pasted, setPasted] = useState(false);
   const [sending, setSending] = useState(false);
   const [isError, setIsError] = useState(false);
+
   const showHide = () => {
-    const hide = display === "block" ? "none" : "block";
-    setDisplay(hide);
+    setDisplay(display === "block" ? "none" : "block");
   };
 
   const handleSubmit = async (event: FormEvent) => {
@@ -30,29 +30,33 @@ export default function FFlinks() {
     }
     setSending(true);
 
+    // Sanitize input before sending to prevent XSS
     const sanitizedInput = DOMPurify.sanitize(inputValue);
 
     try {
       const response = await axios.post(
-        "https://suk-learn-api.vercel.app/api/fflinks/POST",
+        "https://suk-learn-api.vercel.app/api/POST", // Ensure the endpoint is correct
         { text: sanitizedInput },
         { headers: { "Content-Type": "application/json" } }
       );
-      console.log("Form submitted with response:", response.data);
+      console.log("Form submitted successfully with response:", response.data);
+
+      // Reset input and states after successful submission
       setSending(false);
       setInputValue("");
     } catch (err) {
-      console.error("Error submitting form", err);
+      console.error("Error submitting form:", err);
+      setSending(false); // Reset sending state on error
     }
   };
 
-  const handlePasterFromClipboard = async () => {
+  const handlePasteFromClipboard = async () => {
     try {
       const text = await navigator.clipboard.readText();
       setInputValue(text);
       setPasted(true);
     } catch (err) {
-      console.error("Failed to read clipboard contents: ", err);
+      console.error("Failed to read clipboard contents:", err);
     }
   };
 
@@ -67,7 +71,6 @@ export default function FFlinks() {
 
       setPasted(false); // Reset the pasted state to prevent continuous submissions
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inputValue, pasted]); // Trigger this effect whenever inputValue or pasted changes
 
   return (
@@ -77,7 +80,7 @@ export default function FFlinks() {
           <button
             id={styles.clipBoard}
             type="button"
-            onClick={handlePasterFromClipboard}
+            onClick={handlePasteFromClipboard}
           >
             ClipBoard
           </button>
@@ -98,9 +101,9 @@ export default function FFlinks() {
             }`}
           />
 
-          <button id={styles.paste} type="submit">
+          <button id={styles.paste} type="submit" disabled={sending}>
             {sending ? (
-              <span className={styles.sending}>Sending</span>
+              <span className={styles.sending}>Sending...</span>
             ) : (
               "Paste"
             )}
