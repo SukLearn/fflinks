@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import FFlinks from "./components/FFlinks/FFlinks";
 import ShowPage from "./components/ShowPage/ShowPage";
 import Lasha from "./components/1996/Lasha";
-import AvatarUploadPage from "./components/test/test";
-
+import AvatarUploadPage from "./components/test/Test";
 function App() {
   return (
     <>
