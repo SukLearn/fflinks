@@ -1,0 +1,87 @@
+.container {
+  background-color: #080606;
+  min-height: 100vh;
+  color: white;
+  font-family: sans-serif;
+  display: flex;
+}
+.title {
+  text-align: center;
+  margin: 25px 0 50px 0;
+}
+.main {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.upload {
+  border: 1px solid white;
+  padding: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  animation: rgbBack 5s ease-in-out infinite;
+}
+.upload:hover,
+.submitButton:hover {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+
+.submitButton {
+  cursor: pointer;
+  margin-top: 50px;
+  padding: 10px 40px;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+.showDownloads {
+  cursor: pointer;
+  margin: 50px 0;
+  padding: 10px 40px;
+  border: 1px solid white;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  width: 220px;
+  position: relative;
+  margin: 50px auto;
+  display: flex;
+}
+.showDownloads:hover {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+
+.modal_title {
+  text-align: center;
+  margin: 10px 0 30px 0;
+}
+
+.modal_list {
+  list-style: none;
+}
+#modal_digit {
+  font-size: 20px;
+  font-weight: bold;
+}
+@keyframes rgbBack {
+  0% {
+    box-shadow: 0 0px 4px 4px rgba(255, 0, 0, 0.7);
+  }
+  50% {
+    box-shadow: 0 0px 4px 4px rgba(0, 255, 0, 0.7);
+  }
+  100% {
+    box-shadow: 0 0px 4px 4px rgba(0, 0, 255, 0.7);
+  }
+}

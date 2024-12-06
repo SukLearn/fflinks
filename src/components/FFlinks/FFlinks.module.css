@@ -44,13 +44,13 @@ input::placeholder {
 
 #clipBoard,
 #paste {
-  border: 0.1rem solid #611515;
+  border: 1px solid #09af03;
   margin: 0.7rem auto;
   cursor: pointer;
   color: white;
   display: block;
   border-radius: 5px;
-  background-color: #853f3c;
+  background-color: #0a0a0a;
 }
 #paste {
   font-size: 1.5em;

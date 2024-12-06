@@ -2,8 +2,8 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import FFlinks from "./components/FFlinks/FFlinks";
 import ShowPage from "./components/ShowPage/ShowPage";
-import Lasha from "./components/1996/Lasha";
-import AvatarUploadPage from "./components/test/Test";
+import Upload from "./components/Upload/Upload";
+import ShowDownloads from "./components/ShowDownloads/ShowDownloads";
 function App() {
   return (
     <>
@@ -11,8 +11,8 @@ function App() {
         <Routes>
           <Route path="/" element={<FFlinks />} />
           <Route path="show" element={<ShowPage />} />
-          <Route path="lashaUrod" element={<Lasha />} />
-          <Route path="test" element={<AvatarUploadPage />} />
+          <Route path="upload" element={<Upload />} />
+          <Route path="showDownloads" element={<ShowDownloads />} />
           <Route path="*" element={<FFlinks />} />
         </Routes>
       </Router>

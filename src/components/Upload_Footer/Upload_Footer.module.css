@@ -1,0 +1,33 @@
+.footer {
+  position: absolute;
+  font-family: sans-serif;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  padding: 15px;
+  border-top: 1px solid white;
+  width: 100%;
+}
+.link_container {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.link_container a {
+  color: white;
+}
+.link {
+  width: 60vw;
+  max-width: 450px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid #09af03;
+  text-align: center;
+  display: inline-block;
+  margin: 10px 50px 0 50px;
+}
+.link:hover {
+  background-color: #09af03;
+  color: black;
+}

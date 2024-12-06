@@ -1,0 +1,76 @@
+.container {
+  background-color: black;
+  min-height: 100vh;
+  color: white;
+  font-family: sans-serif;
+  display: flex;
+}
+
+.container h1 {
+  text-align: center;
+}
+.download {
+  color: green;
+}
+.download:hover {
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+.download:active {
+  color: white;
+  text-decoration: none;
+}
+.delete {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: red;
+}
+.delete:hover {
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+.delete:active {
+  color: white;
+  text-decoration: none;
+}
+.table_wrapper {
+  /* max-height: 600px; */
+  overflow-y: auto;
+}
+@media only screen and (max-height: 600px) {
+  .table_wrapper {
+    max-height: 400px;
+  }
+}
+@media only screen and (min-height: 601px) and (max-height: 700px) {
+  .table_wrapper {
+    max-height: 500px;
+  }
+}
+@media screen and (min-height: 701px) and (max-height: 800px) {
+  .table_wrapper {
+    max-height: 550px;
+  }
+}
+@media only screen and (min-height: 801px) and (max-height: 900px) {
+  .table_wrapper {
+    max-height: 650px;
+  }
+}
+@media only screen and (min-height: 901px) and (max-height: 1000px) {
+  .table_wrapper {
+    max-height: 700px;
+  }
+}
+@media screen and (min-height: 1001px) {
+  .table_wrapper {
+    max-height: 800px;
+  }
+}
+@media screen and (min-height: 1200px) {
+  .table_wrapper {
+    max-height: 80vh;
+  }
+}

@@ -1,17 +1,18 @@
+import { Link } from "react-router-dom";
 import styles from "./footer.module.css";
 
 export default function Footer() {
   return (
     <>
       <div id={styles.footer}>
-        <a
+        <Link
           id={styles._download}
-          href="upload"
+          to="upload"
           className={styles.button1}
           title="upload"
         >
           Load File
-        </a>
+        </Link>
       </div>
     </>
   );
