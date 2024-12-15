@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: cursive;
+  font-family: "Lato", cursive, "sans-serif";
   background-color: black;
   color: white;
   user-select: none;

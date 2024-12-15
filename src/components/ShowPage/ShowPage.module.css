@@ -6,7 +6,7 @@
   height: 100vh;
   display: flex;
   align-items: center;
-  font-family: cursive;
+  font-family: "Lato", cursive, "sans-serif";
 }
 .copyToClipboard,
 .modalButton {
